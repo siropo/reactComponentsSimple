@@ -1,0 +1,45 @@
+.focused-img {
+    max-height: 200px;
+}
+
+.wrapper-chars {
+    width: 500px;
+    margin: auto
+}
+
+.wrapper-char {
+    display: inline-block;
+}
+
+.char-img {
+    max-height: 150px;
+    display: inline-block;
+    border: 2px solid orange;
+}
+
+.wrapper {
+    margin: auto;
+    position: relative;
+}
+
+.wrapper .slider-img {
+    margin: auto;
+    display: block;
+    max-height: 400px;
+}
+
+.wrapper .slider-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 150px;
+    height: 150px;
+}
+
+.wrapper .case-left {
+    left: 0;
+}
+
+.wrapper .case-right {
+    right: 0;
+}
