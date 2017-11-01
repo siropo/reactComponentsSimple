@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import Char from './Char';
 
 class Bio extends Component {
@@ -14,23 +14,23 @@ class Bio extends Component {
     }
 
     componentDidMount() {
-        (async () => {
+        (async() => {
             try {
                 const jsonData = await fetch('http://localhost:9999/character/' + this.state.id);
                 const data = await jsonData.json();
-                this.setState({ curChar: data })
+                this.setState({curChar: data})
             } catch (e) {
                 console.log(e);
             }
         })();
     }
 
-    componentWillReceiveProps() {
-        (async () => {
+    componentDidUpdate() {
+        (async() => {
             try {
                 const jsonData = await fetch('http://localhost:9999/character/' + this.props.id);
                 const data = await jsonData.json();
-                this.setState({ curChar: data })
+                this.setState({curChar: data})
             } catch (e) {
                 console.log(e);
             }
@@ -41,7 +41,11 @@ class Bio extends Component {
         return (
             <fieldset>
 
-                <Char key={0} params={{ url: this.state.curChar.url }} />
+                <Char
+                    key={0}
+                    params={{
+                    url: this.state.curChar.url
+                }}/>
                 <p>
                     {this.state.curChar.bio}
                 </p>
@@ -52,4 +56,3 @@ class Bio extends Component {
 }
 
 export default Bio;
-
